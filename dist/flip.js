@@ -3822,10 +3822,7 @@ var Tick = function () {
                 didUpdate: function didUpdate(tick, value) {},
                 willDestroy: function willDestroy(tick) {},
                 didDestroy: function didDestroy(tick) {},
-                credits: {
-                    label: 'Powered by PQINA',
-                    url: 'https://pqina.nl/?ref=credits'
-                }
+                
             };
         }
     }]);
