@@ -147,18 +147,26 @@
                 };
             }
 
-            // Image rotation logic
+            // Image rotation logic with persistence
             const images = ['images/image1.jpg', 'images/image2.jpg', 'images/image3.jpg']; // Add paths to your images here
-            let currentIndex = 0;
+            let currentIndex = localStorage.getItem('currentImageIndex') || 0; // Retrieve stored index or default to 0
 
             function updateImage() {
                 const imageElement = document.getElementById('changingImage');
-                currentIndex = (currentIndex + 1) % images.length;
+                currentIndex = (parseInt(currentIndex) + 1) % images.length;
                 imageElement.src = images[currentIndex];
+                localStorage.setItem('currentImageIndex', currentIndex); // Save the current index
             }
+
+            // Set the initial image when the page loads
+            document.addEventListener('DOMContentLoaded', () => {
+                const imageElement = document.getElementById('changingImage');
+                imageElement.src = images[currentIndex];
+            });
 
             // Change image every 5 seconds
             setInterval(updateImage, 5000);
+
         </script>
         <script src="dist/flip.min.js"></script>
     </body>
