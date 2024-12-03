@@ -29,9 +29,19 @@
       align-items: flex-end;
       overflow: hidden;
     }
+    @media only screen and (max-width: 600px) {
+      .flower{
+        scale: 1.5;
+        margin-bottom: 80% !important;
+      }
+      .enter-button{
+        margin-bottom: 55% !important;
+      }
+    }
 
     .flower {
       position: relative;
+      margin-bottom: 10%;
     }
 
     .flower__glass {
@@ -241,14 +251,14 @@
       bottom: 6vmin;
       left: -30%;
       border-radius: none;
-      clip-path: none;
+      clip-path:none;
       border-radius: 10vmin 2vmin 10vmin 2vmin;
       transform: rotate(-55deg);
       background-image: linear-gradient(to left bottom, #ffa085, #eb8b8b, #492f2f 98%);
     }
 
     .flower__fall-down--yellow {
-      animation: flower-fall-down-yellow 8s 1.2s linear forwards;
+      animation: flower-fall-down-yellow 7s 1.2s linear forwards;
     }
 
     .flower__fall-down--pink {
@@ -298,7 +308,7 @@
       }
 
       100% {
-        transform: translate(2vmin, 70vmin) rotate(150deg);
+        transform: translate(-10vmin, 38vmin) ;
       }
     }
 
@@ -357,7 +367,7 @@
       background-color: #ff5f57;
       color: #fff;
       border: none;
-      margin-bottom: 20px;
+      margin-bottom: 6%;
       padding: 15px 30px;
       font-size: 1.5rem;
       border-radius: 8px;
@@ -416,6 +426,6 @@
       </div>
       <div class="flower__glass"></div>
     </div>
-    <button class="enter-button" onclick="window.location.href='home.html'">Enter</button>
+    <button class="enter-button" onclick="window.location.href='love.html'">Enter</button>
   </body>
 </html>
