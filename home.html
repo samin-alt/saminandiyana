@@ -84,9 +84,19 @@
                 height: 500px;
                 object-fit: contain;
             }
+            @media only screen and (min-width: 600px) {
+                .tick{
+                    scale: 0.5;
+                }
+                .title {
+                    font-size: 2.5em !important;
+                    margin: 0px !important;
+                    padding: 0px !important;
+                }
+            }
         </style>
+        <h1 class="title tick-label tick-text">How Long We Have Been Together</h1>
         <div class="tick" data-did-init="handleTickInit">
-            <h1 class="title tick-label tick-text">How Long We Have Been Together</h1>
             <div data-repeat="true" data-layout="horizontal fit" data-transform="preset(y, M, d, h, m, s) -> delay">
                 <div class="tick-group">
                     <div data-key="value" data-repeat="true" data-transform="pad(00) -> split -> delay">
