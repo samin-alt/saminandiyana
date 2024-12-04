@@ -1,0 +1,32 @@
+# Define the folder containing the .jpg files
+$folderPath = "C:\Users\samin\Documents\saminandiyana\images" 
+
+# Check if the folder exists
+if (-Not (Test-Path $folderPath)) {
+    Write-Host "Folder path does not exist: $folderPath"
+    exit
+}
+
+# Get all the .jpg files in the folder
+$jpgFiles = Get-ChildItem -Path $folderPath -Filter *.jpg
+
+# Initialize a counter
+$counter = 1
+
+# Loop through each .jpg file
+foreach ($file in $jpgFiles) {
+    # Define the new name for the file
+    $newFileName = "image$counter.jpg"
+    $newFilePath = Join-Path -Path $folderPath -ChildPath $newFileName
+
+    # Rename the file
+    try {
+        Rename-Item -Path $file.FullName -NewName $newFileName
+        Write-Host "Renamed $($file.Name) to $newFileName"
+        $counter++
+    } catch {
+        Write-Host "Failed to rename $($file.Name): $_"
+    }
+}
+
+Write-Host "Renaming process completed."
