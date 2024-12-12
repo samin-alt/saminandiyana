@@ -175,6 +175,9 @@
             document.addEventListener('DOMContentLoaded', () => {
                 const imageElement = document.getElementById('changingImage');
                 imageElement.src = images[currentIndex];
+
+                const backgroundMusic = document.getElementById('backgroundMusic');
+                backgroundMusic.play();
             });
 
             // Change image every 5 seconds
