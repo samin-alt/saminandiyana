@@ -163,7 +163,7 @@
                     newIndex = Math.floor(Math.random() * images.length);
                 } while (newIndex == currentIndex);
 
-                currentIndex = 82;
+                currentIndex = newIndex;
                 imageElement.src = images[currentIndex];
                 localStorage.setItem('currentImageIndex', currentIndex); // Save the current index
             }
